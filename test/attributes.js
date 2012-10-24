@@ -36,11 +36,18 @@ $(document).ready(function() {
       labelAttributes[forName] = 'foo';
       var label = $.el.label(labelAttributes);
 
-
       equal(input.getAttribute('name'), 'foo');
       equal(input.getAttribute('type'), 'text');
 
       equal((label.getAttribute('for') || label.getAttribute('htmlFor')), 'foo');
     });
+  });
+
+  test("button type attribute", function() {
+    var results = [];
+
+    var button = $.el.button({type: "submit"}, "Send");
+    equal(button.getAttribute("type"), "submit", "type: getAttribute()");
+    equal(button.type, "submit", "type: direct property access");
   });
 });
