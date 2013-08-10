@@ -5,11 +5,14 @@
   <script type="text/javascript" src="../laconic.js"></script>
   <script type="text/javascript">
     window.onload = function() {
-      $.el.a({
-        onclick : function() {
-          alert('foo');
-        }
-      }, 'click').appendTo(document.body);
+      $.el.table(
+        $.el.tr(
+          $.el.th('first name').to(window, 'first'),
+          $.el.th('last name')),
+        $.el.tr(
+          $.el.td('Joe'),
+          $.el.td('Stelmach'))
+      ).appendTo(document.body);
     };
 
   </script>

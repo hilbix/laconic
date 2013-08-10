@@ -134,7 +134,19 @@
       }
       return el;
     };
-    
+
+    el.to = function(obj, name) {
+        obj[name] = el;
+        return el;
+    };
+
+    if (typeof window.jQuery !== 'undefined') {
+        el.$to = function(obj, name) {
+            obj[name] = jQuery(el);
+            return el;
+        };
+    }
+
     return el;
   }
 
