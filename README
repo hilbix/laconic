@@ -3,6 +3,7 @@ Laconic offers a sane solution to generating DOM content in JavaScript.
 Note: added two methods for element caching to and $to(available if jQuery is enabled)
 
 Using:
+````html
 $.el.table(
     $.el.tr(
       $.el.th('first name').to(window, 'first'),
