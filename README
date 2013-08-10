@@ -4,9 +4,7 @@ for documentation, see http://joestelmach.github.com/laconic/
 Note: added two methods for element caching to and $to(available if jQuery is enabled)
 
 Using:
-````html
-<script type="text/javascript">
-    window.onload = function() {
+
         $.el.table(
             $.el.tr(
               $.el.th('first name').to(window, 'first'),
@@ -15,7 +13,5 @@ Using:
               $.el.td('Joe'),
               $.el.td('Stelmach'))
             ).appendTo(document.body);
-
+    
         console.log(first); // <th>​first name​</th>
-    };
-</script>
