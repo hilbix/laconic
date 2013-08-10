@@ -5,13 +5,5 @@ Note: added two methods for element caching to and $to(available if jQuery is en
 
 Using:
 
-        $.el.table(
-            $.el.tr(
-              $.el.th('first name').to(window, 'first'),
-              $.el.th('last name')),
-            $.el.tr(
-              $.el.td('Joe'),
-              $.el.td('Stelmach'))
-            ).appendTo(document.body);
-    
-        console.log(first); // <th>​first name​</th>
+        $el.div('first name').to(window, 'cachedEl'),
+        console.log(cachedEl); // <div>​first name​</div>
