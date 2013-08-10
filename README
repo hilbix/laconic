@@ -1,20 +1,21 @@
 Laconic offers a sane solution to generating DOM content in JavaScript.
+for documentation, see http://joestelmach.github.com/laconic/
 
 Note: added two methods for element caching to and $to(available if jQuery is enabled)
 
 Using:
 ````html
-$.el.table(
-    $.el.tr(
-      $.el.th('first name').to(window, 'first'),
-      $.el.th('last name')),
-    $.el.tr(
-      $.el.td('Joe'),
-      $.el.td('Stelmach'))
-    ).appendTo(document.body);
+<script type="text/javascript">
+    window.onload = function() {
+        $.el.table(
+            $.el.tr(
+              $.el.th('first name').to(window, 'first'),
+              $.el.th('last name')),
+            $.el.tr(
+              $.el.td('Joe'),
+              $.el.td('Stelmach'))
+            ).appendTo(document.body);
 
-console.log(first); // <th>​first name​</th>​
-
-
-
-for documentation, see http://joestelmach.github.com/laconic/
+        console.log(first); // <th>​first name​</th>
+    };
+</script>
