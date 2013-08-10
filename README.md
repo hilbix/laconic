@@ -4,7 +4,10 @@ Laconic
 Laconic offers a sane solution to generating DOM content in JavaScript.
 for documentation, see http://joestelmach.github.com/laconic/
 
-Note: added two methods for element caching to and $to(available if jQuery is enabled)
+**Note:** Added two methods for element caching - to and $to(available if jQuery is enabled)
+
+        to(parent, name) - save element to parent[name]
+        $to(parent, name) - save element to parent[name] as jQuery object
 
 Using:
 
