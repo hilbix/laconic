@@ -6,8 +6,8 @@ for documentation, see http://joestelmach.github.com/laconic/
 
 **Note:** Added two methods for element caching - to and $to(available if jQuery is enabled)
 
-        to(parent, name) - save element to parent[name]
-        $to(parent, name) - save element to parent[name] as jQuery object
+        to(context, name) - save element to context[name]
+        $to(context, name) - save element to context[name] as jQuery object
 
 Using:
 
