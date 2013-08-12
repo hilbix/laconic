@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Laconic Test Suite</title>
-  <script type="text/javascript" src="../laconic.js"></script>
+  <script type="text/javascript" src="laconic.js"></script>
   <script type="text/javascript">
     window.onload = function() {
       $.el.table(
@@ -13,6 +13,10 @@
           $.el.td('Joe'),
           $.el.td('Stelmach'))
       ).appendTo(document.body);
+
+      first.onclick = function() {
+          alert('first clicked');
+      };
     };
 
   </script>
