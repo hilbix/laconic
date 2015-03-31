@@ -33,6 +33,24 @@
     'vspace'            : 'vSpace'
   };
 
+  var needsButtonHack = (function() {
+    var button = document.createElement("button");
+    var needsButtonHack = false;
+
+    button.setAttribute("type", "submit");
+    if (button.type !== "submit") {
+      try {
+        button = document.createElement('<button type="submit">');
+        needsButtonHack = button.type === "submit";
+      } catch (e) {
+        // Standards-compliant browsers will throw an exception on that
+        // createElement.
+      }
+    }
+
+    return needsButtonHack;
+  })();
+
   // The laconic function serves as a generic method for generating
   // DOM content, and also as a placeholder for helper functions.
   //
@@ -47,11 +65,21 @@
   // 
   // for example:
   // laconic('div', {'class' : 'foo'}, 'bar');
-  function laconic() {
+  function laconic(tagName) {
 
     // create a new element of the requested type
-    var el = document.createElement(arguments[0]);
-    
+    var el;
+    if(tagName.toLowerCase() == 'button' && needsButtonHack) {
+      var buttonType = (arguments[1] || {}).type || "button";
+      el = document.createElement(
+        '<' + tagName + ' type="' + buttonType + '">'
+      );
+    }
+
+    else {
+      el = document.createElement(tagName);
+    }
+
     // walk through the rest of the arguments
     for(var i=1; i<arguments.length; i++) {
       var arg = arguments[i];
