@@ -38,7 +38,8 @@
     <h1>Laconic</h1>
     <p>
       Laconic offers an intuitive approach to generating DOM content in JavaScript.  The 
-      source code is available on <a href='https://github.com/joestelmach/laconic'>GitHub</a>.
+      source code is available on <a href='https://github.com/hilbix/laconic'>GitHub</a>
+      (<a href='https://github.com/joestelmach/laconic'>see original</a>).
     </p>
 
     <p>
@@ -125,6 +126,22 @@ document.body.appendChild(table);
   &lt;div&gt;first&lt;/div&gt;
   &lt;div&gt;second&lt;/div&gt;
 &lt;/div&gt;
+</code></pre>
+
+    <p>
+      There are also two new methods to cache elements in some other object like <tt>window</tt>:
+    </p>
+
+<pre><code class='language-html'>to(context, name) - save element to context[name]
+$to(context, name) - save element to context[name] as jQuery object
+</code></pre>
+
+    <p>
+      Example
+    </p>
+
+<pre><code class='language-html'>$el.div('first name').to(window, 'cachedEl');
+console.log(cachedEl); // &lt;div&gt;&lt;first name&lt;/div&gt;
 </code></pre>
 
   </body>
