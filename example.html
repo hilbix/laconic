@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Laconic Test Suite</title>
+  <script type="text/javascript" src="laconic.js"></script>
+  <script type="text/javascript">
+    window.onload = function() {
+      $.el.table(
+        $.el.tr(
+          $.el.th('first name').to(window, 'first'),
+          $.el.th('last name')),
+        $.el.tr(
+          $.el.td('Joe'),
+          $.el.td('Stelmach'))
+      ).appendTo(document.body);
+
+      first.onclick = function() {
+          alert('first clicked');
+      };
+    };
+
+  </script>
+</head>
+<body>
+</body>
+</html>

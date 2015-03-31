@@ -162,7 +162,19 @@
       }
       return el;
     };
-    
+
+    el.to = function(context, name) {
+        context[name] = el;
+        return el;
+    };
+
+    if (typeof window.jQuery !== 'undefined') {
+        el.$to = function(context, name) {
+            context[name] = jQuery(el);
+            return el;
+        };
+    }
+
     return el;
   }
 
